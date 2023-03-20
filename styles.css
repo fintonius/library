@@ -1,0 +1,55 @@
+#newBook {
+    border: 3px lightskyblue solid;
+    border-radius: 5px;
+    padding: 10px;
+    width: 400px;
+    display: grid;
+    grid-gap: 7px;
+
+}
+
+label {
+    border: 2px lightblue solid;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+ border: solid lightgreen 3px;
+ border-radius: 3px;
+ padding: 3px;
+}
+
+#test {
+    display: grid;
+    width: 800px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-items: center;
+    border: solid red;
+}
+
+#test > div {
+    border: solid seagreen;    
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#test > div > p {
+    border: 1px solid blue;
+    height: 40px;
+    margin: 0px;
+}
+
+#test > div > h1 {
+    border: 1px solid orange;
+    height: 40px;
+    margin: 0px;
+}
