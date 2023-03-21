@@ -8,28 +8,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="newBook" method="post" onsubmit="event.preventDefault()">
-        <label for="title">Title
-            <input type="text" id="title" placeholder="Title" required/>
-        </label>
-
-        <label for="author">Author
-            <input type="text" id="author" placeholder="Author" required/>
-        </label>
-
-        <label for="pages">Pages
-            <input type="number" id="pages" placeholder="000" required/>
-        </label>
-
-        <label for="read"><input type="checkbox" id="read"/>Click the box if you've read this book</label>
-        
-        <button id="testsubmit" type="submit" onclick="addBookToLibrary()">Submit</button>
-    </form>
-
-    <div id="test">
-
+    <div id="book">
+        <form id="newBook" method="post" onsubmit="event.preventDefault()">
+            <label for="title">Title
+                <input type="text" id="title" placeholder="Title" required/>
+            </label>
+            <label for="author">Author
+                <input type="text" id="author" placeholder="Author" required/>
+            </label>
+            <label for="pages">Pages
+                <input type="number" id="pages" placeholder="000" required/>
+            </label>        
+        </form>
+        <p>Click the box if you've read this book <input type="checkbox" id="read"/></p>
+        <button id="testsubmit" form="newBook" type="submit" onclick="addBookToLibrary()">
+            Click to add this book to your library
+        </button>
     </div>
-
+    <div id="test"></div>
+    
     <script src="scripts.js"></script>
 </body>
 </html>
