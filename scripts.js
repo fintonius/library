@@ -10,14 +10,40 @@ function Book(title, author, pages, read) {
         return(title, author, pages, read)
     }
 }
+
+//Creates some example entries 
 const theHobbit = new Book('The Hobbit', 'JRR Tolkein', '300', 'read');
 myLibrary.unshift(theHobbit);
-const lOTR = new Book('The Hobbit', 'JRR Tolkein', '300', 'read');
-myLibrary.unshift(theHobbit);
+const lOTR = new Book('The Lord of the Rings', 'JRR Tolkein', '900', 'read');
+myLibrary.unshift(lOTR);
 
-// function boxTicked() {
-//   const checkBox = document.getElementById('read');
-// }
+
+
+//Adds the example entries as cards
+function bookAdd() {
+  for(let i=0; i <= myLibrary.length ; i++) {   
+   const newBookEntry = document.createElement('div');
+   const bookTitle = document.createElement('h1');
+   const bookAuthor = document.createElement('p');
+   const bookPages = document.createElement('p');
+   const readBook = document.createElement('p');
+   bookTitle.textContent = myLibrary[i].title;
+   bookAuthor.textContent = `${myLibrary[i].title} was written by 
+   ${myLibrary[i].author}`;
+   bookPages.textContent = `The book is ${myLibrary[i].pages} pages long`;
+   if (myLibrary[i].read == 'read') {
+    readBook.textContent = 'I have read this book.';
+  } else {
+    readBook.textContent = 'I have not read this book yet.';
+  }
+   newBookEntry.appendChild(bookTitle);
+   newBookEntry.appendChild(bookAuthor);
+   newBookEntry.appendChild(bookPages);
+   newBookEntry.appendChild(readBook);
+   test.appendChild(newBookEntry);
+ }
+}
+bookAdd();
 
 function addBookToLibrary() {
   //takes the users input and creates a new Book object 
@@ -27,49 +53,42 @@ function addBookToLibrary() {
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
   let boxTicked = document.getElementById('read');
-  let read = 'test';
-  if (boxTicked.checked == true) {
-    read = 'blarnacles';
-  };
+  let read = '';
 
-  if (title && author && pages) {
+  if (boxTicked.checked == true) {
+    read = 'read';
+  }
+
+  if (title && author && pages) { //confirms user has input all info
     x = new Book(title, author, pages, read);
     myLibrary.unshift(x);
     addBookEntry();
     console.table(myLibrary);
+    boxTicked.checked = false;
     document.getElementById("newBook").reset();
   }       
   return;
 }
 
+//Creates a new 'card' for the user's new Book object
 function addBookEntry() {
     const newBookEntry = document.createElement('div');
     const bookTitle = document.createElement('h1');
     const bookAuthor = document.createElement('p');
     const bookPages = document.createElement('p');
+    const readBook = document.createElement('p');
     bookTitle.textContent = myLibrary[0].title;
-    bookAuthor.textContent = `${myLibrary[0].title} was written by ${myLibrary[0].author}`;
+    bookAuthor.textContent = `${myLibrary[0].title} was written by 
+    ${myLibrary[0].author}`;
     bookPages.textContent = `The book is ${myLibrary[0].pages} pages long`;
+    if (myLibrary[0].read == 'read') {
+      readBook.textContent = 'I have read this book.';
+    } else {
+      readBook.textContent = 'I have not read this book yet.';
+    }
     newBookEntry.appendChild(bookTitle);
     newBookEntry.appendChild(bookAuthor);
     newBookEntry.appendChild(bookPages);
+    newBookEntry.appendChild(readBook);
     test.appendChild(newBookEntry);
 }
-
-function bookAdd() {
-   for(let i=0; i<=myLibrary.length; i++) {   
-    const newBookEntry = document.createElement('div');
-    const bookTitle = document.createElement('h1');
-    const bookAuthor = document.createElement('p');
-    const bookPages = document.createElement('p');
-    bookTitle.textContent = myLibrary[i].title;
-    bookAuthor.textContent = `${myLibrary[i].title} was written by ${myLibrary[i].author}`;
-    bookPages.textContent = `The book is ${myLibrary[i].pages} pages long`;
-    newBookEntry.appendChild(bookTitle);
-    newBookEntry.appendChild(bookAuthor);
-    newBookEntry.appendChild(bookPages);
-    test.appendChild(newBookEntry);
-  }
-}
-
-bookAdd();

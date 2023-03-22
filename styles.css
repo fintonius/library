@@ -40,14 +40,15 @@ input {
 #test {
     display: grid;
     width: 800px;
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: minmax(200px, 1fr);
     grid-gap: 50px;
     padding: 10px; 
 }
 
 #test > div {
     border: solid seagreen;    
-    height: 200px;
+    height: auto;
     width: 200px;
     display: grid;
     grid-gap: 5px;
