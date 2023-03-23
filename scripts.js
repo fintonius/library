@@ -27,6 +27,13 @@ function bookAdd() {
    const bookAuthor = document.createElement('p');
    const bookPages = document.createElement('p');
    const readBook = document.createElement('p');
+
+   const remove = document.createElement('button');
+   remove.onclick = function() {this.style.backgroundColor = 'red'};
+
+   const haveRead = document.createElement('INPUT');
+   haveRead.setAttribute('type', 'checkbox');
+
    bookTitle.textContent = myLibrary[i].title;
    bookAuthor.textContent = `${myLibrary[i].title} was written by 
    ${myLibrary[i].author}`;
@@ -40,6 +47,8 @@ function bookAdd() {
    newBookEntry.appendChild(bookAuthor);
    newBookEntry.appendChild(bookPages);
    newBookEntry.appendChild(readBook);
+   newBookEntry.appendChild(remove);
+   newBookEntry.appendChild(haveRead);
    test.appendChild(newBookEntry);
  }
 }
@@ -77,6 +86,13 @@ function addBookEntry() {
     const bookAuthor = document.createElement('p');
     const bookPages = document.createElement('p');
     const readBook = document.createElement('p');
+
+    const remove = document.createElement('button');
+    remove.onclick = function() {this.style.backgroundColor = 'red'};
+ 
+    const haveRead = document.createElement('INPUT');
+    haveRead.setAttribute('type', 'checkbox');
+    
     bookTitle.textContent = myLibrary[0].title;
     bookAuthor.textContent = `${myLibrary[0].title} was written by 
     ${myLibrary[0].author}`;
@@ -90,5 +106,7 @@ function addBookEntry() {
     newBookEntry.appendChild(bookAuthor);
     newBookEntry.appendChild(bookPages);
     newBookEntry.appendChild(readBook);
+    newBookEntry.appendChild(remove);
+    newBookEntry.appendChild(haveRead);
     test.appendChild(newBookEntry);
 }
