@@ -11,49 +11,6 @@ function Book(title, author, pages, read) {
   };
 }
 
-//Creates some example entries
-const theHobbit = new Book("The Hobbit", "JRR Tolkein", "300", "read");
-myLibrary.unshift(theHobbit);
-const lOTR = new Book("The Lord of the Rings", "JRR Tolkein", "900", "read");
-myLibrary.unshift(lOTR);
-
-//Adds the example entries as cards
-function bookAdd() {
-  for (let i = 0; i <= myLibrary.length; i++) {
-    const newBookEntry = document.createElement("div");
-    const bookTitle = document.createElement("h1");
-    const bookAuthor = document.createElement("p");
-    const bookPages = document.createElement("p");
-    const readBook = document.createElement("p");
-
-    const remove = document.createElement("button");
-    remove.onclick = function () {
-      this.style.backgroundColor = "red";
-    };
-
-    const haveRead = document.createElement("INPUT");
-    haveRead.setAttribute("type", "checkbox");
-
-    bookTitle.textContent = myLibrary[i].title;
-    bookAuthor.textContent = `${myLibrary[i].title} was written by 
-   ${myLibrary[i].author}`;
-    bookPages.textContent = `The book is ${myLibrary[i].pages} pages long`;
-    if (myLibrary[i].read == "read") {
-      readBook.textContent = "I have read this book.";
-    } else {
-      readBook.textContent = "I have not read this book yet.";
-    }
-    newBookEntry.appendChild(bookTitle);
-    newBookEntry.appendChild(bookAuthor);
-    newBookEntry.appendChild(bookPages);
-    newBookEntry.appendChild(readBook);
-    newBookEntry.appendChild(remove);
-    newBookEntry.appendChild(haveRead);
-    test.appendChild(newBookEntry);
-  }
-}
-bookAdd();
-
 function addBookToLibrary() {
   //takes the users input and creates a new Book object
   //and adds it to the myLibrary array
@@ -69,11 +26,12 @@ function addBookToLibrary() {
   }
 
   if (title && author && pages) {
-    //confirms user has input all info
+    //only runs once user has input all info
     x = new Book(title, author, pages, read);
     myLibrary.push(x);
     addBookEntry();
     console.table(myLibrary);
+    console.log(myLibrary.indexOf(x));
     boxTicked.checked = false;
     document.getElementById("newBook").reset();
   }
@@ -126,3 +84,50 @@ function addBookEntry() {
   newBookEntry.appendChild(haveRead);
   test.appendChild(newBookEntry);
 }
+
+//Creates some example entries
+const theHobbit = new Book("The Hobbit", "JRR Tolkein", "300", "read");
+myLibrary.unshift(theHobbit);
+addBookEntry();
+
+const lOTR = new Book("The Lord of the Rings", "JRR Tolkein", "900", "read");
+myLibrary.unshift(lOTR);
+addBookEntry();
+
+//Adds the example entries as cards
+//finally realised I didn't need this and could just call addBookEntry()... :|
+// function bookAdd() {
+//   for (let i = 0; i <= myLibrary.length; i++) {
+//     const newBookEntry = document.createElement("div");
+//     const bookTitle = document.createElement("h1");
+//     const bookAuthor = document.createElement("p");
+//     const bookPages = document.createElement("p");
+//     const readBook = document.createElement("p");
+
+//     const remove = document.createElement("button");
+//     remove.onclick = function () {
+//       this.style.backgroundColor = "red";
+//     };
+
+//     const haveRead = document.createElement("INPUT");
+//     haveRead.setAttribute("type", "checkbox");
+
+//     bookTitle.textContent = myLibrary[i].title;
+//     bookAuthor.textContent = `${myLibrary[i].title} was written by 
+//    ${myLibrary[i].author}`;
+//     bookPages.textContent = `The book is ${myLibrary[i].pages} pages long`;
+//     if (myLibrary[i].read == "read") {
+//       readBook.textContent = "I have read this book.";
+//     } else {
+//       readBook.textContent = "I have not read this book yet.";
+//     }
+//     newBookEntry.appendChild(bookTitle);
+//     newBookEntry.appendChild(bookAuthor);
+//     newBookEntry.appendChild(bookPages);
+//     newBookEntry.appendChild(readBook);
+//     newBookEntry.appendChild(remove);
+//     newBookEntry.appendChild(haveRead);
+//     test.appendChild(newBookEntry);
+//   }
+// }
+// bookAdd();
