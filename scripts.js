@@ -47,11 +47,8 @@ function addBookEntry() {
   const bookAuthor = document.createElement("p");
   const bookPages = document.createElement("p");
   const readBook = document.createElement("p");
-
-  const remove = document.createElement("button");
-  remove.onclick = function () {
-    this.style.backgroundColor = "red";
-  };
+  const bookNumber = document.createElement("p");
+  const removeBook = document.createElement("button");  
 
   const haveRead = document.createElement("INPUT");
   haveRead.setAttribute("type", "checkbox");
@@ -64,8 +61,10 @@ function addBookEntry() {
   //I don't know how to specify just the last element of the array but technically
   //here I don't need to :( 
   myLibrary.forEach((obj) => {
-    console.log(obj.title);
+    // console.log(obj.title);
     bookTitle.textContent = obj.title;
+    newBookEntry.dataset.index = myLibrary.indexOf(obj);
+    bookNumber.textContent = myLibrary.indexOf(obj) + 1;
     bookAuthor.textContent = `${obj.title} was written by 
       ${obj.author}`;
     bookPages.textContent = `The book is ${obj.pages} pages long`;
@@ -76,23 +75,41 @@ function addBookEntry() {
     }
   });
 
+  removeBook.addEventListener('click', () => {
+    let index = newBookEntry.dataset.index;
+    myLibrary.splice(index, 1);
+    console.table(myLibrary)
+    myLibrary.forEach((obj) => {
+      newBookEntry.dataset.index = myLibrary.indexOf(obj);
+    })
+    console.table(myLibrary)
+  });
+
   newBookEntry.appendChild(bookTitle);
   newBookEntry.appendChild(bookAuthor);
   newBookEntry.appendChild(bookPages);
   newBookEntry.appendChild(readBook);
-  newBookEntry.appendChild(remove);
+  newBookEntry.appendChild(removeBook);
   newBookEntry.appendChild(haveRead);
+  newBookEntry.appendChild(bookNumber);
   test.appendChild(newBookEntry);
 }
 
+// function deleteBook(e) {
+//  console.log(test);
+// }
+
 //Creates some example entries
 const theHobbit = new Book("The Hobbit", "JRR Tolkein", "300", "read");
-myLibrary.unshift(theHobbit);
+myLibrary.push(theHobbit);
 addBookEntry();
 
 const lOTR = new Book("The Lord of the Rings", "JRR Tolkein", "900", "read");
-myLibrary.unshift(lOTR);
+myLibrary.push(lOTR);
 addBookEntry();
+
+
+// console.table(myLibrary)
 
 //Adds the example entries as cards
 //finally realised I didn't need this and could just call addBookEntry()... :|
