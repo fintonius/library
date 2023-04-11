@@ -76,13 +76,16 @@ function addBookEntry() {
   });
 
   removeBook.addEventListener('click', () => {
-    let index = newBookEntry.dataset.index;
+    let index = '';
+    index = bookNumber.textContent - 1;
+    console.log(index)
     myLibrary.splice(index, 1);
-    console.table(myLibrary)
+    test.removeChild(newBookEntry);
     myLibrary.forEach((obj) => {
       newBookEntry.dataset.index = myLibrary.indexOf(obj);
+      bookNumber.textContent = myLibrary.indexOf(obj) + 1;
     })
-    console.table(myLibrary)
+    console.table(myLibrary);   
   });
 
   newBookEntry.appendChild(bookTitle);
