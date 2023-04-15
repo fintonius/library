@@ -50,6 +50,7 @@ function addBookEntry() {
   const readBook = document.createElement("p");
   const bookNumber = document.createElement("p");
   const removeBook = document.createElement("button");  
+  removeBook.textContent = 'Click to remove book from library'
   let index = myLibrary.length -1;
   bookNumber.textContent = index +1;  
   const haveRead = document.createElement("INPUT");
