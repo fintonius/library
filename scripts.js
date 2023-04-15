@@ -69,9 +69,7 @@ function addBookEntry() {
     console.log(index)
     myLibrary.splice(index, 1);
     test.removeChild(newBookEntry);
-    const cards = document.querySelectorAll('.card');
-    const cardArray = Array.from(cards);
-    console.table(cardArray);
+    deleteBook();
     // console.table(myLibrary);   
   });
 
@@ -83,6 +81,12 @@ function addBookEntry() {
   newBookEntry.appendChild(haveRead);
   newBookEntry.appendChild(bookNumber);
   test.appendChild(newBookEntry);
+}
+
+function deleteBook() {  
+  const cards = document.querySelectorAll('.card');
+  const cardArray = Array.from(cards);
+  console.table(cardArray);
 }
 
 //Creates some example entries
