@@ -37,7 +37,7 @@ input {
  padding: 3px;
 }
 
-#test {
+#library {
     display: grid;
     width: 800px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -46,7 +46,7 @@ input {
     padding: 10px; 
 }
 
-#test > div {
+#library > div {
     border: solid seagreen;    
     height: auto;
     width: 200px;
@@ -55,14 +55,14 @@ input {
     padding: 5px;
 }
 
-#test > div > p, 
-#test > div > h1 {
+#library > div > p, 
+#library > div > h1 {
     padding: 5px;
     border: 2px solid lightskyblue;
     margin: 0px;
 }
 
-#test > div > h1 {
+#library > div > h1 {
     font-size: 18px;
     border: 1px solid orange;
 }
