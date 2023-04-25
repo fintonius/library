@@ -3,7 +3,7 @@ body {
 
 }
 
-#book {
+#addBook {
     border: 3px lightskyblue solid;
     border-radius: 5px;
     padding: 10px;
@@ -66,3 +66,10 @@ input {
     font-size: 18px;
     border: 1px solid orange;
 }
+
+/* creates an angled corner effect
+    .card {
+    background-color: rgb(255, 255, 152);
+    clip-path: polygon(10% 0%,100% 0%,100% 100%,0% 100%,0% 10%);
+} */
+

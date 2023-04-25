@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="book">
+    <button onclick="myFunction()">Click to add book</button>
+    <div id="addBook" style="display: none;">
         <form id="newBook" method="post" onsubmit="event.preventDefault()">
             <label for="title">Title
                 <input type="text" id="title" placeholder="Title" required/>

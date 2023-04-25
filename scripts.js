@@ -1,7 +1,10 @@
 const myLibrary = [];
 const library = document.getElementById("library");
 let cardArray;
-
+function myFunction() {
+  let x = document.getElementById('addBook');
+  (x.style.display === "none") ? x.style.display = 'block' : x.style.display = 'none';
+}
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
