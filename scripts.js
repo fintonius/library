@@ -1,9 +1,16 @@
 const myLibrary = [];
 const library = document.getElementById("library");
 let cardArray;
+
 function myFunction() {
+  console.log('click');
   let x = document.getElementById('addBook');
-  (x.style.display === "none") ? x.style.display = 'block' : x.style.display = 'none';
+  let y = document.getElementById('overlay');
+  if (x.style.display === 'none') {
+    x.style.display = 'block';
+    y.style.display = 'block';
+  }
+  // (x.style.display === "none") ? x.style.display = 'block' : x.style.display = 'none';
 }
 function Book(title, author, pages, read) {
   this.title = title;
@@ -83,6 +90,13 @@ function addBookEntry() {
   newBookEntry.appendChild(removeBook);
   newBookEntry.appendChild(haveRead);
   library.appendChild(newBookEntry);
+  
+  let x = document.getElementById('addBook');
+  let y = document.getElementById('overlay');
+  if(x.style.display === 'block') {
+    x.style.display = 'none';
+    y.style.display = 'none';
+  }
 }
 
 //updates each remaining cards' data-set-attribute to be its current index
