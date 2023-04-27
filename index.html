@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="overlay" style="display: none;"></div>
-    <button onclick="myFunction()">Click to add book</button>
+    <button onclick="showForm()">Click to add book</button>
     <div id="addBook" style="display: none;">
         <form id="newBook" method="post" onsubmit="event.preventDefault()">
             <label for="title">Title
@@ -23,7 +23,7 @@
             </label>        
         </form>
         <p>Click the box if you've read this book <input type="checkbox" id="read"/></p>
-        <button id="testsubmit" form="newBook" type="submit" onclick="addBookToLibrary()">
+        <button id="submit" form="newBook" type="submit" onclick="addBookToLibrary()">
             Click to add this book to your library
         </button>
     </div>

@@ -1,6 +1,9 @@
 
 body {
-    font-family: "Calibre", system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+    font-family: "Calibre", system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", 
+    "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", 
+    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", 
+    "Century Gothic", "Liberation Sans", sans-serif;
     font-size: 1.2rem;
 }
 #overlay {

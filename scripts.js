@@ -2,16 +2,21 @@ const myLibrary = [];
 const library = document.getElementById("library");
 let cardArray;
 
-function myFunction() {
-  console.log('click');
-  let x = document.getElementById('addBook');
-  let y = document.getElementById('overlay');
-  if (x.style.display === 'none') {
-    x.style.display = 'block';
-    y.style.display = 'block';
+let bookForm = document.getElementById('addBook');
+let overlay = document.getElementById('overlay');
+
+function showForm() {
+  if (bookForm.style.display === 'none') {
+    bookForm.style.display = 'block';
+    overlay.style.display = 'block';
+
+    overlay.addEventListener('click', () => {
+      bookForm.style.display = 'none';
+      overlay.style.display = 'none';
+    })
   }
-  // (x.style.display === "none") ? x.style.display = 'block' : x.style.display = 'none';
 }
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -91,11 +96,10 @@ function addBookEntry() {
   newBookEntry.appendChild(haveRead);
   library.appendChild(newBookEntry);
   
-  let x = document.getElementById('addBook');
-  let y = document.getElementById('overlay');
-  if(x.style.display === 'block') {
-    x.style.display = 'none';
-    y.style.display = 'none';
+
+  if(bookForm.style.display === 'block') {
+    bookForm.style.display = 'none';
+    overlay.style.display = 'none';
   }
 }
 
