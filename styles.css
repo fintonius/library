@@ -63,6 +63,7 @@ body {
     padding: 10px;
     width: 400px;
     display: grid;
+    z-index: 1;
 }
 
 form {
@@ -143,6 +144,7 @@ input {
     transform: translateY(2px);
     filter: none;
 }
+
 #library > div > div > button:hover {
     opacity: .8;
     cursor: pointer;
@@ -163,6 +165,7 @@ input {
     bottom: 0;
     top: 0;
     background-color: rgba(0,0,0,0.6);
+    z-index: 1;
 }
 
 
