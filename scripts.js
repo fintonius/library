@@ -62,9 +62,8 @@ function addBookEntry() {
   const bookAuthor = document.createElement("p");
   const bookPages = document.createElement("p");
   const readBook = document.createElement("p");
-  const buttonWrap = document.createElement("span");
+  const buttonWrap = document.createElement("div");
   const removeBook = document.createElement("button");  
-  // removeBook.textContent = 'X'
   let index = myLibrary.length -1; 
   newBookEntry.setAttribute('currentIndex', index); 
   const haveRead = document.createElement("INPUT");
