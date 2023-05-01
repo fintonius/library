@@ -1,10 +1,16 @@
-
+* {
+    /* border: 1px red solid; */
+    margin: 0px;
+}
 body {
     font-family: "Calibre", system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", 
     "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", 
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", 
     "Century Gothic", "Liberation Sans", sans-serif;
     font-size: 1.2rem;
+    border: 2px orange solid;
+    display: grid;
+    justify-content: center;   
 }
 #overlay {
     position: fixed;
@@ -15,6 +21,27 @@ body {
     background-color: rgba(0,0,0,0.6);
 }
 
+.header {
+    display: grid;
+    justify-content: center; 
+    align-items: center;
+    grid-gap: 15px;
+    padding: 15px;
+}
+
+.header > h1 {
+    display: grid;
+    justify-content: center;
+    font-family: lobster;
+}
+
+.header > button {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    justify-self: center;
+    align-self: center;
+}
 #addBook {
     position: absolute;
     left: 50%;
@@ -54,6 +81,7 @@ input {
 }
 
 #library {
+    border: 1px solid blue;
     display: grid;
     width: 800px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -63,6 +91,7 @@ input {
 }
 
 #library > div {
+    border-radius: 0 30px 0 0;
     border: solid seagreen;    
     height: auto;
     width: 250px;
@@ -79,8 +108,36 @@ input {
 }
 
 #library > div > h1 {
-    font-size: 18px;
+    font-size: 1.5rem;
     border: 1px solid orange;
+
+}
+
+#library > div > span {
+    border: none;
+    justify-self: end;
+    filter: drop-shadow(0px 1px darkred);
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+#library > div > span > button {
+    border: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: red;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+#library > div > span:hover{
+    transform: translateY(2px);
+    filter: none;
+    cursor: pointer;
+}
+#library > div > span > button:hover {
+    opacity: .8;
+    cursor: pointer;
 }
 
 /* creates an angled corner effect

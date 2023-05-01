@@ -62,8 +62,9 @@ function addBookEntry() {
   const bookAuthor = document.createElement("p");
   const bookPages = document.createElement("p");
   const readBook = document.createElement("p");
+  const buttonWrap = document.createElement("span");
   const removeBook = document.createElement("button");  
-  removeBook.textContent = 'Click to remove book from library'
+  // removeBook.textContent = 'X'
   let index = myLibrary.length -1; 
   newBookEntry.setAttribute('currentIndex', index); 
   const haveRead = document.createElement("INPUT");
@@ -87,12 +88,12 @@ function addBookEntry() {
     updateIndexAttribute(cardArray);
     console.table(myLibrary);   
   });
-
+  buttonWrap.appendChild(removeBook);
+  newBookEntry.appendChild(buttonWrap);
   newBookEntry.appendChild(bookTitle);
   newBookEntry.appendChild(bookAuthor);
   newBookEntry.appendChild(bookPages);
-  newBookEntry.appendChild(readBook);
-  newBookEntry.appendChild(removeBook);
+  newBookEntry.appendChild(readBook);  
   newBookEntry.appendChild(haveRead);
   library.appendChild(newBookEntry);
   
