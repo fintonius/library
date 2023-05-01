@@ -96,7 +96,6 @@ function addBookEntry() {
   newBookEntry.appendChild(haveRead);
   library.appendChild(newBookEntry);
   
-
   if(bookForm.style.display === 'block') {
     bookForm.style.display = 'none';
     overlay.style.display = 'none';

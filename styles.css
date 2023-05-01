@@ -28,11 +28,30 @@ body {
 
 .header > button {
     border-radius: 50%;
+    border: none;
     width: 70px;
     height: 70px;
     justify-self: center;
-    align-self: center;
+    background-color: lightskyblue;
+    box-shadow: 1px 5px 0px darkcyan;   
+    color: white; 
+    opacity: 0.8;
 }
+
+.header > button:hover {
+    opacity: 1;
+    cursor: pointer;
+    color: rgb(69, 71, 81);
+    transform: translateY(1px);
+    box-shadow: 1px 4px 0px darkcyan;
+}
+
+.header > button:active {
+    background-color: rgb(96, 189, 246);
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+
 #addBook {
     position: absolute;
     left: 50%;
