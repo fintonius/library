@@ -30,10 +30,10 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
   //takes the users input and creates a new Book object
   //and adds it to myLibrary[]
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
-  let boxTicked = document.getElementById("read");
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
+  let boxTicked = document.getElementById('read');
   let read = "";
 
   if (boxTicked.checked == true) {
@@ -47,7 +47,7 @@ function addBookToLibrary() {
     addBookEntry();
     console.table(myLibrary);
     boxTicked.checked = false;
-    document.getElementById("newBook").reset();
+    document.getElementById('newBook').reset();
   }
   return;
 };
@@ -55,28 +55,39 @@ function addBookToLibrary() {
 //Creates a new 'card' for the user's new Book object
 function addBookEntry() {
   //creates the HTML elements to add book info to
-  const newBookEntry = document.createElement("div");  
+  const newBookEntry = document.createElement('div');  
   newBookEntry.classList.add('card');
-
-  const bookTitle = document.createElement("h1");
-  const bookAuthor = document.createElement("p");
-  const bookPages = document.createElement("p");
-  const readBook = document.createElement("p");
-  const buttonWrap = document.createElement("div");
-  const removeBook = document.createElement("button");  
+  const cardContent = document.createElement('div')
+  const bookTitle = document.createElement('h1');
+  const bookAuthor = document.createElement('p');
+  const bookPages = document.createElement('p');
+  const readBook = document.createElement('div');
+  const readBookText = document.createElement('p');
+  const buttonWrap = document.createElement('div');
+  buttonWrap.classList.add('buttonWrap')
+  const removeBook = document.createElement('button');  
   let index = myLibrary.length -1; 
   newBookEntry.setAttribute('currentIndex', index); 
-  const haveRead = document.createElement("INPUT");
-  haveRead.setAttribute("type", "checkbox");
+
+  const haveRead = document.createElement('INPUT');
+  haveRead.setAttribute('type', 'checkbox');
+  haveRead.addEventListener('click', () => {
+    if (haveRead.checked == true) {
+      readBookText.textContent = "I have read this book.";    
+    } else {readBookText.textContent = "I have not read this book yet.";
+    }
+  });
+  
 
   bookTitle.textContent = myLibrary[index].title;
   bookAuthor.textContent = `${bookTitle.textContent} was written by 
   ${myLibrary[index].author}`;
   bookPages.textContent = `The book is ${myLibrary[index].pages} pages long`;
   if (myLibrary[index].read == "read") {
-    readBook.textContent = "I have read this book.";
+    readBookText.textContent = "I have read this book.";
+    haveRead.checked = 'check';
   } else {
-    readBook.textContent = "I have not read this book yet.";
+    readBookText.textContent = "I have not read this book yet.";
   }
 
   removeBook.addEventListener('click', () => {
@@ -87,13 +98,15 @@ function addBookEntry() {
     updateIndexAttribute(cardArray);
     console.table(myLibrary);   
   });
+  
+  readBook.appendChild(readBookText);
+  readBook.appendChild(haveRead);
   buttonWrap.appendChild(removeBook);
   newBookEntry.appendChild(buttonWrap);
   newBookEntry.appendChild(bookTitle);
   newBookEntry.appendChild(bookAuthor);
   newBookEntry.appendChild(bookPages);
   newBookEntry.appendChild(readBook);  
-  newBookEntry.appendChild(haveRead);
   library.appendChild(newBookEntry);
   
   if(bookForm.style.display === 'block') {
