@@ -57,10 +57,8 @@ function addBookEntry() {
   //creates the HTML elements to add book info to
   const newBookEntry = document.createElement('div');  
   newBookEntry.classList.add('card');
-  const cardContent = document.createElement('div')
   const bookTitle = document.createElement('h1');
-  const bookAuthor = document.createElement('p');
-  const bookPages = document.createElement('p');
+  const bookInfo = document.createElement('p');
   const readBook = document.createElement('div');
   const readBookText = document.createElement('p');
   const buttonWrap = document.createElement('div');
@@ -78,11 +76,9 @@ function addBookEntry() {
     }
   });
   
-
   bookTitle.textContent = myLibrary[index].title;
-  bookAuthor.textContent = `${bookTitle.textContent} was written by 
-  ${myLibrary[index].author}`;
-  bookPages.textContent = `The book is ${myLibrary[index].pages} pages long`;
+  bookInfo.textContent = `${bookTitle.textContent} was written by 
+  ${myLibrary[index].author}. It is ${myLibrary[index].pages} pages long`;
   if (myLibrary[index].read == "read") {
     readBookText.textContent = "I have read this book.";
     haveRead.checked = 'check';
@@ -104,8 +100,7 @@ function addBookEntry() {
   buttonWrap.appendChild(removeBook);
   newBookEntry.appendChild(buttonWrap);
   newBookEntry.appendChild(bookTitle);
-  newBookEntry.appendChild(bookAuthor);
-  newBookEntry.appendChild(bookPages);
+  newBookEntry.appendChild(bookInfo);
   newBookEntry.appendChild(readBook);  
   library.appendChild(newBookEntry);
   
