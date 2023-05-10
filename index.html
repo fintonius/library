@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles.css"/>
     <title>Document</title>
 </head>
-<body>
+<body> 
     <div id="overlay" style="display: none;"></div>
     <div class="header">
         <h1>MY LIBRARY</h1>
-        <button onclick="showForm()">ADD A BOOK</button>
+        <button cursor-text="Add book!" onclick="showForm()">ADD <br>A</br> BOOK</button>
     </div>
     <div id="addBook" style="display: none;">
         <form id="newBook" method="post" onsubmit="event.preventDefault()">
@@ -30,7 +30,10 @@
             Click to add this book to your library
         </button>
     </div>
-    <div id="library"></div>
+    <div id="library">
+
+        
+    </div>
     
     <script src="scripts.js"></script>
 </body>
