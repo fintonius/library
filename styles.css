@@ -9,6 +9,7 @@ body {
     font-size: 1.1rem;
     display: grid;
     background-color: whitesmoke;
+    grid-template-columns: 1fr;
 }
 
 .header {
@@ -19,7 +20,9 @@ body {
     min-width: 800px;
     grid-template-columns: 2fr 1fr;
     grid-gap: 15px;
-    padding: 15px;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .header > h1 {
@@ -92,16 +95,22 @@ input {
  border: solid lightgreen 2px;
  border-radius: 3px;
  padding: 3px;
+ margin-left: 10px;
+}
+
+#submit {
+    justify-self: center;
+    margin-top: 10px;
+    margin-left: 85px;
 }
 
 #library {
     display: grid;
-    align-self: start;
     border-top: solid 3px black;
     grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
     grid-auto-rows: 1fr;
     grid-gap: 10px;
-    padding-top: 25px; 
+    padding-top: 50px; 
     padding-left: 50px;
 }
 
@@ -114,7 +123,6 @@ input {
     width: 205px;
     display: grid;
     grid-template-rows: 30px 1fr;
-    margin-left: 15px;
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -177,7 +185,6 @@ padding-top: 2px;
 .yes-or-no {
     width: 60%;
     height: 80%;
-    /* align-self: top; */
     justify-self: center;
     text-align: center;
     color: white;
@@ -241,245 +248,4 @@ padding-top: 2px;
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(15px);
-} 
-
-/* OLD CODE 
---------------------------------------------------
-*/
-/* * {
-    margin: 0px;
 }
-body {
-    font-family: "Calibre", system-ui, -apple-system, BlinkMacSystemFont, "Avenir Next", 
-    "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", 
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", 
-    "Century Gothic", "Liberation Sans", sans-serif;
-    font-size: 1.2rem;
-    display: grid;
-    background-color: rgb(251, 248, 49);
-}
-
-.header {
-    display: grid;
-    justify-self: center;
-    justify-content: start; 
-    align-items: center;
-    min-width: 600px;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 15px;
-    padding: 15px;
-}
-
-.header > h1 {
-    display: grid;
-    justify-content: start;
-    font-family: arial;
-    font-size: clamp(80px, 10vw, 120px);
-
-}
-
-.header > button {
-    border: 2px solid black;
-    border-radius: 0 10px 0 0;
-    width: 50px;
-    height: 70px;
-    background-color: rgb(240, 240, 240);
-    font-size: 13px;
-    box-shadow: 0px 2px 0px black;   
-    color: rgb(63, 63, 63); 
-    opacity: 1;
-
-}
-
-.header > button:hover {
-    background-color: rgb(164, 164, 164);
-    color: white;
-    cursor: pointer;
-}
-
-.header > button:active {
-    background-color: darkgray;
-    color: black;
-    box-shadow: inset 0px 1px 0px 0px black;
-    transform: translateY(1px);
-  }
-
-#addBook {
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    margin-left: -200px;
-    border: 3px lightskyblue solid;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    width: 400px;
-    display: grid;
-    z-index: 1;
-}
-
-form {
-    display: grid;
-    grid-gap: 10px;
-}
-
-label {
-    border: 2px lightblue solid;
-    border-radius: 3px;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    padding: 5px;
-}
-
-#addBook > p {
-    border: 2px lightblue solid;
-    border-radius: 3px;
-    padding: 5px;
-    margin-top: 5px;
-}
-
-input {
- border: solid lightgreen 2px;
- border-radius: 3px;
- padding: 3px;
-}
-
-#library {
-    display: grid;
-    align-self: start;
-    border-top: solid 3px black;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
-    grid-auto-rows: 1fr;
-    grid-gap: 10px;
-    padding-top: 25px; 
-    padding-left: 50px;
-}
-
-#library > div {
-    border-radius: 0 30px 0 0;
-    border: solid 2px black;
-    background-color: rgb(249, 247, 247);
-    color: black;
-    box-shadow:  0px 1px 0px 0px black;
-    min-height: 300px;
-    width: 200px;
-    display: grid;
-    grid-template-rows: 30px 1fr 2fr;
-    grid-gap: 5px;
-    margin-left: 15px;
-    padding: 5px;
-}
-
-#library > div > p, 
-#library > div > h1,
-#library > div > :last-child  {
-    border: none;
-    margin: 0px;
-}
-
-#library > div > h1 {
-    border-bottom: 2px solid rgb(117, 114, 114) ;
-    padding-bottom: 3px;
-    font-size: 1.5rem;
-}
-
-.buttonWrap {
-    border: none;
-    justify-self: end;
-    filter: drop-shadow(0px 1px darkred);
-    padding: 5px;
-    padding-bottom: 0px;
-}
-
-#library > div > div > button {
-    border: none;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: red;
-    /*create X shape for button*/
-    /*
-    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 
-    50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-}
-
-.buttonWrap:hover {
-    transform: translateY(2px);
-    filter: none;
-}
-
-#library > div > div > button:hover {
-    opacity: .8;
-    cursor: pointer;
-}
-
-#library > div > :last-child {
-    display: grid;
-    grid-template-columns: 35fr 1fr;
-    align-items: center;
-    justify-content: center;
-    
-}
-#library > div > :last-child > p{
-    border: none;
-}
-
-#overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 1;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 14px;
-}
-
-.switch .checkbox{
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-.slider::before {
-    position: absolute;
-    content: "";
-    height: 12px;
-    width: 12px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.checkbox:checked + .slider {
-    background-color: #2196F3;
-}
-
-.checkbox:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-.checkbox:checked + .slider::before{
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-} 
-
-*/
